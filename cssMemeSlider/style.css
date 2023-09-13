@@ -9,18 +9,36 @@
   }
 
   body {
+  display: flex;
   justify-content: center;
   align-items: center;
   color: #FFFFFF;
   overflow: hidden;
 }
-img {
-    max-width: 100%;
-    object-fit: cover;
+.wrap  {
+    width: 840px;
+    height: 700px;
+    position: relative;
+    box-sizing: border-box;
 }
-.wrap {
+.buttons {
+    position: absolute;
+    bottom: 50px;
+    right: 20px;
+}
+.buttons a {
+    display: inline-block;
+    border-radius: 50%;
+    background-color: cornflowerblue;
+    border-color: cornflowerblue;
+    padding: 10px;
+}
+.buttons a:hover {
+    cursor: pointer;
+}
+.jpgWrap {
     width: 800px;
-    height: 750px;
+    height: 700px;
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     overflow: hidden;
@@ -33,6 +51,7 @@ img {
     background-size: cover;
     border-radius: 10px;
     position: relative;
+    animation: 2s all ease;
 }
 .mem2 {
     width: 800px;
@@ -60,11 +79,11 @@ img {
 }
 .memText {
     position: absolute;
-    top: 650px;
+    bottom: -50px;
     left: 0px;
     color: black;
     font-family: Arial, Helvetica, sans-serif;
-    font-size: 20px;
+    font-size: 18px;
     font-style: normal;
     font-weight: 400;
     line-height: normal;
