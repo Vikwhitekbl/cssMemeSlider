@@ -2,39 +2,49 @@
 	padding: 0;
 	margin: 0;
 	border: 0;
-	}
+}
 
-  html {
-  scroll-behavior: smooth;
-  }
+html {
+    scroll-behavior: smooth;
+}
 
-  body {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  color: #FFFFFF;
-  overflow: hidden;
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #FFFFFF;
+    overflow: hidden;
+}
+img {
+    max-width: 100%;
+    object-fit: cover;
+    border-radius: 10px;
 }
 .wrap  {
-    width: 840px;
-    height: 700px;
-    position: relative;
+    width: 860px;
+    height: 720px;
     box-sizing: border-box;
+    background-color: darkcyan;
+    border-radius: 0 0 10px 10px;
 }
 .buttons {
-    position: absolute;
-    bottom: 50px;
-    right: 20px;
+    display: flex;
+    gap: 15px;
+    justify-self: end;
 }
 .buttons a {
+    width: 5px;
     display: inline-block;
     border-radius: 50%;
-    background-color: cornflowerblue;
-    border-color: cornflowerblue;
+    color: yellow;
+    background-color: yellow;
+    border: outset;
     padding: 10px;
+    margin: auto;
 }
 .buttons a:hover {
     cursor: pointer;
+    background-color: unset;
 }
 .jpgWrap {
     width: 800px;
@@ -42,45 +52,45 @@
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     overflow: hidden;
-    margin: 0 20px;
+    margin: 20px 30px 0;
 }
-.mem1 {
+#mem1 {
     width: 800px;
     height: 600px;
-    background: url(../cssMemeSlider/jpeg/fine.jpg) center no-repeat;
-    background-size: cover;
     border-radius: 10px;
-    position: relative;
-    animation: 2s all ease;
 }
-.mem2 {
+#mem1:target {
+    animation: slide 2s forwards;
+}
+#mem2 {
     width: 800px;
     height: 600px;
-    background: url(../cssMemeSlider/jpeg/bag.jpg) center no-repeat;
-    background-size: cover;
     border-radius: 10px;
-    position: relative;
 }
-.mem3 {
+#mem2:target {
+    animation: slide 2s forwards;
+}
+#mem3 {
     width: 800px;
     height: 600px;
-    background: url(../cssMemeSlider/jpeg/pravilno.jpg) center no-repeat;
-    background-size: cover;
     border-radius: 10px;
-    position: relative;
 }
-.mem4 {
+#mem3:target {
+    animation: slide 2s forwards;
+}
+#mem3 img {
+    width: 800px;
+}
+#mem4 {
     width: 800px;
     height: 600px;
-    background: url(../cssMemeSlider/jpeg/vovka.jpg) center no-repeat;
-    background-size: cover;
     border-radius: 10px;
-    position: relative;
+}
+#mem4:target {
+    animation: slide 2s forwards;
 }
 .memText {
-    position: absolute;
-    bottom: -50px;
-    left: 0px;
+    display: flex;
     color: black;
     font-family: Arial, Helvetica, sans-serif;
     font-size: 18px;
@@ -88,3 +98,12 @@
     font-weight: 400;
     line-height: normal;
 }
+@keyframes slide {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-800px);
+    }
+  }
+  
