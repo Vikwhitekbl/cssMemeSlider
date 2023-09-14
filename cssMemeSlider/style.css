@@ -1,101 +1,133 @@
+@keyframes smoothscroll1 {
+    from, to { scroll-behavior: smooth; }
+}
+  
+@keyframes smoothscroll2 {
+    from, to { scroll-behavior: smooth; }
+}
+  
+html {
+    animation: smoothscroll1 2s;
+    scroll-behavior: smooth;
+    height: 100%;
+    display: table;
+    margin: 0 auto;
+}
+  
+html:focus-within {
+    animation-name: smoothscroll2;
+    scroll-behavior: smooth;
+}
+
 * {
 	padding: 0;
 	margin: 0;
 	border: 0;
 }
-
-html {
-    scroll-behavior: smooth;
-}
-
 body {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    height: 740px;
+    vertical-align: middle;
     color: #FFFFFF;
     overflow: hidden;
 }
 img {
     max-width: 100%;
     object-fit: cover;
-    border-radius: 10px;
+    border-radius: inherit;
 }
 .wrap  {
-    width: 860px;
-    height: 720px;
+    height: inherit;
     box-sizing: border-box;
     background-color: darkcyan;
-    border-radius: 0 0 10px 10px;
+    padding: 2vh 4vh;
 }
 .buttons {
     display: flex;
-    gap: 15px;
+    gap: 2vh;
     justify-self: end;
 }
 .buttons a {
-    width: 5px;
     display: inline-block;
     border-radius: 50%;
     color: yellow;
     background-color: yellow;
     border: outset;
-    padding: 10px;
+    padding: 1vh;
     margin: auto;
-}
-.buttons a:hover {
-    cursor: pointer;
+    text-decoration: none;
+}/*
+.buttons a button {
+    display: block;
+    padding: 1vh;
+    border-radius: 50%;
+}*/
+.linkInFokus:link {
     background-color: unset;
 }
+
+.linkOffFokus:link {
+    background-color: yellow;
+}
+.linkInFokus:hover {
+    cursor: pointer;
+    background-color: darkcyan;
+    color: white;
+}
+.linkOffFokus:hover {
+    cursor: pointer;
+    background-color: white;
+    color: white;
+}
+.buttons a:checked {
+    cursor: pointer;
+}
 .jpgWrap {
-    width: 800px;
-    height: 700px;
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    height: inherit;
     overflow: hidden;
-    margin: 20px 30px 0;
 }
-#mem1 {
-    width: 800px;
-    height: 600px;
-    border-radius: 10px;
+.link1:hover {
+    cursor: pointer;
+    background-color: yellow;
+    color: white;
 }
-#mem1:target {
-    animation: slide 2s forwards;
+.jpg {
+    border-radius: 1em;
+}
+.jpg div {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 4vh;
 }
 #mem2 {
-    width: 800px;
-    height: 600px;
-    border-radius: 10px;
+    transform: translate(100%, -100%);
+}
+#mem3 {
+    transform: translate(200%, -200%);
+}
+#mem4 {
+    transform: translate(300%, -300%);
+}
+/*
+
+#mem1:target {
+    animation: slide 2s forwards;
 }
 #mem2:target {
     animation: slide 2s forwards;
 }
-#mem3 {
-    width: 800px;
-    height: 600px;
-    border-radius: 10px;
-}
 #mem3:target {
     animation: slide 2s forwards;
 }
-#mem3 img {
-    width: 800px;
-}
-#mem4 {
-    width: 800px;
-    height: 600px;
-    border-radius: 10px;
-}
 #mem4:target {
     animation: slide 2s forwards;
-}
+}*/
 .memText {
     display: flex;
     color: black;
     font-family: Arial, Helvetica, sans-serif;
-    font-size: 18px;
+    font-size: x-large;
     font-style: normal;
-    font-weight: 400;
+    font-weight: bold;
     line-height: normal;
 }
 @keyframes slide {
@@ -103,7 +135,7 @@ img {
       transform: translateX(0);
     }
     100% {
-      transform: translateX(-800px);
+      transform: translateX(-100%);
     }
   }
   
