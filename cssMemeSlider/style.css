@@ -1,22 +1,7 @@
-@keyframes smoothscroll1 {
-    from, to { scroll-behavior: smooth; }
-}
-  
-@keyframes smoothscroll2 {
-    from, to { scroll-behavior: smooth; }
-}
-  
 html {
-    animation: smoothscroll1 2s;
-    scroll-behavior: smooth;
-    height: 100%;
-    display: table;
-    margin: 0 auto;
-}
-  
-html:focus-within {
-    animation-name: smoothscroll2;
-    scroll-behavior: smooth;
+  height: 100%;
+  display: table;
+  margin: 0 auto;
 }
 
 * {
@@ -25,117 +10,143 @@ html:focus-within {
 	border: 0;
 }
 body {
-    height: 740px;
-    vertical-align: middle;
-    color: #FFFFFF;
-    overflow: hidden;
+  height: 68vh;
+  vertical-align: middle;
+  color: #FFFFFF;
+  overflow: hidden;
 }
 img {
-    max-width: 100%;
-    object-fit: cover;
-    border-radius: inherit;
+  max-width: 100%;
+  object-fit: cover;
+  border-radius: 2%;
 }
 .wrap  {
-    height: inherit;
-    box-sizing: border-box;
-    background-color: darkcyan;
-    padding: 2vh 4vh;
+  height: inherit;
+  box-sizing: border-box;
+  background-color: darkcyan;
+  padding: 0 4vh;
 }
-.buttons {
-    display: flex;
-    gap: 2vh;
-    justify-self: end;
+.buttonsWrap {
+  display: flex;
+  justify-content: flex-end;
+  gap: 0.35vh;
 }
-.buttons a {
-    display: inline-block;
-    border-radius: 50%;
-    color: yellow;
-    background-color: yellow;
-    border: outset;
-    padding: 1vh;
-    margin: auto;
-    text-decoration: none;
-}/*
-.buttons a button {
-    display: block;
-    padding: 1vh;
-    border-radius: 50%;
-}*/
-.linkInFokus:link {
-    background-color: unset;
+.buttonsWrap div {
+  background-color: darkcyan;
+  transform: translate(0, -17.1vh);
+  margin: 1vh 0;
 }
 
-.linkOffFokus:link {
-    background-color: yellow;
+.links {
+  display: inline-block;
+  border-radius: 50%;
+  padding: 1vh;
+  transform: translate(0, -0.08vh);
 }
-.linkInFokus:hover {
-    cursor: pointer;
-    background-color: darkcyan;
-    color: white;
+.links label {
+  display: block;
+  width: 1.5vh;
+  height: 1.5vh;
+  background-color: yellow;
+  border-radius: 50%;
 }
-.linkOffFokus:hover {
-    cursor: pointer;
-    background-color: white;
-    color: white;
+input[type="radio"] {
+  display: none;
+  width: 4vh;
+  height: 3vh;
+  accent-color: darkcyan;
+  transform: translate(51vh, 62.6vh);
 }
-.buttons a:checked {
-    cursor: pointer;
+.links label:target {
+  border: solid;
+  background-color: unset;
+  cursor: pointer;
+}
+.links:checked {
+  background-color: unset;
+}
+.links:hover {
+  cursor: pointer;
+}
+.links label:hover {
+  cursor: pointer;
+  background-color: white;
 }
 .jpgWrap {
-    height: inherit;
-    overflow: hidden;
-}
-.link1:hover {
-    cursor: pointer;
-    background-color: yellow;
-    color: white;
+  height: inherit;
+  overflow: hidden;
 }
 .jpg {
-    border-radius: 1em;
+  max-width: 68vh;
 }
-.jpg div {
-    display: flex;
-    justify-content: space-between;
-    margin-top: 4vh;
+.forJpg {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 4vh;
 }
-#mem2 {
-    transform: translate(100%, -100%);
+.content {
+  margin-top: 4vh;
 }
-#mem3 {
-    transform: translate(200%, -200%);
+.content div {
+  height: 4vh;
 }
-#mem4 {
-    transform: translate(300%, -300%);
+.memText {
+  display: flex;
+  color: black;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 3vh;
+  font-style: normal;
+  font-weight: bold;
+  line-height: normal;
+}
+.secondTxt {
+  transform: translate(100%, -4vh);
+}
+.thirdTxt {
+  transform: translate(200%, -8vh);
+}
+.fourthTxt {
+  transform: translate(300%, -12vh);
+}
+
+#expand-toggle1:checked ~ * .jpg {
+  transform: translateX(0%);
+  transition: transform 1s ease-in-out;
+}
+#expand-toggle2:checked ~ * .jpg {
+  transform: translateX(-100%);
+  transition: transform 1s ease-in-out;
+}
+#expand-toggle3:checked ~ * .jpg {
+  transform: translateX(-200%);
+  transition: transform 1s ease-in-out;
+}
+#expand-toggle4:checked ~ * .jpg {
+  transform: translateX(-300%);
+  transition: transform 1s ease-in-out;
 }
 /*
+#expand-toggle4:checked ~ #expand-btn4 {
+  background-color: #ccc;
+}
+*/
 
-#mem1:target {
-    animation: slide 2s forwards;
-}
-#mem2:target {
-    animation: slide 2s forwards;
-}
-#mem3:target {
-    animation: slide 2s forwards;
-}
-#mem4:target {
-    animation: slide 2s forwards;
-}*/
-.memText {
-    display: flex;
-    color: black;
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: x-large;
-    font-style: normal;
-    font-weight: bold;
-    line-height: normal;
-}
-@keyframes slide {
-    0% {
-      transform: translateX(0);
-    }
-    100% {
-      transform: translateX(-100%);
-    }
+@media screen and (max-width: 730px) {
+  .memText {
+    max-width: 30vh;
   }
-  
+  .buttonsWrap div {
+    height: 12vh;
+  }
+}
+@media screen and (max-width: 610px) {
+  .memText {
+    max-width: 20vh;
+  }
+  .buttonsWrap div {
+    height: 16vh;
+  }
+  .buttonsWrap {
+    transform: translateX(0.2vh);
+  }
+}
