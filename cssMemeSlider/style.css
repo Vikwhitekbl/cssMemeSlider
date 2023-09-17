@@ -1,0 +1,201 @@
+html {
+  height: 100%;
+  display: table;
+  margin: 0 auto;
+}
+
+* {
+	padding: 0;
+	margin: 0;
+	border: 0;
+}
+body {
+  height: 68vh;
+  vertical-align: middle;
+  color: #FFFFFF;
+  overflow: hidden;
+}
+img {
+  max-width: 100%;
+  object-fit: cover;
+  border-radius: 2%;
+}
+.wrap  {
+  height: inherit;
+  box-sizing: border-box;
+  background-color: darkcyan;
+  padding: 0 4vh;
+}
+.buttonsWrap {
+  display: flex;
+  justify-content: flex-end;
+  gap: 0.35vh;
+}
+.buttonsWrap div {
+  background-color: darkcyan;
+  transform: translate(0, -17.1vh);
+  margin: 1vh 0;
+  height: 12vh;
+}
+
+.links {
+  display: inline-block;
+  border-radius: 50%;
+  padding: 1vh;
+  transform: translate(0, -0.08vh);
+}
+.links label {
+  display: block;
+  width: 1.5vh;
+  height: 1.5vh;
+  background-color: yellow;
+  border-radius: 50%;
+}
+input[type="radio"] {
+  display: none;
+  width: 4vh;
+  height: 3vh;
+  accent-color: darkcyan;
+  transform: translate(51vh, 62.6vh);
+}
+.links label:target {
+  border: solid;
+  background-color: unset;
+  cursor: pointer;
+}
+.links:checked {
+  background-color: unset;
+}
+.links:hover {
+  cursor: pointer;
+}
+.links label:hover {
+  cursor: pointer;
+  color: white;
+  background-color: white;
+}
+.jpgWrap {
+  height: inherit;
+  overflow: hidden;
+}
+.jpg {
+  max-width: 55vh;
+}
+.forJpg {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 4vh;
+}
+.content {
+  margin-top: 4vh;
+}
+.content div {
+  height: 4vh;
+}
+.memText {
+  max-width: 30vh;
+  display: flex;
+  color: black;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 3vh;
+  font-style: normal;
+  font-weight: bold;
+  line-height: normal;
+}
+.secondTxt {
+  transform: translate(100%, -4vh);
+}
+.thirdTxt {
+  transform: translate(200%, -8vh);
+}
+.fourthTxt {
+  transform: translate(300%, -12vh);
+}
+
+#expand-toggle1:checked ~ * .jpg {
+  transform: translateX(0%);
+  transition: transform 1s ease-in-out;
+}
+#expand-toggle2:checked ~ * .jpg {
+  transform: translateX(-100%);
+  transition: transform 1s ease-in-out;
+}
+#expand-toggle3:checked ~ * .jpg {
+  transform: translateX(-200%);
+  transition: transform 1s ease-in-out;
+}
+#expand-toggle4:checked ~ * .jpg {
+  transform: translateX(-300%);
+  transition: transform 1s ease-in-out;
+}
+
+input[type="radio"][value="imp1"]:checked ~ * .buttonsWrap div label:nth-child(1) label {
+  color: white;
+  background-color: darkcyan;
+  border: solid;
+}
+input[type="radio"][value="imp1"]:checked ~ * .buttonsWrap div label:not(:nth-child(1)) label {
+  color: yellow;
+  background-color: yellow;
+  border: solid;
+}
+input[type="radio"][value="imp2"]:checked ~ * .buttonsWrap div label:nth-child(2) label {
+  color: white;
+  background-color: darkcyan;
+  border: solid;
+}
+input[type="radio"][value="imp2"]:checked ~ * .buttonsWrap div label:not(:nth-child(2)) label {
+  color: yellow;
+  background-color: yellow;
+  border: solid;
+}
+input[type="radio"][value="imp3"]:checked ~ * .buttonsWrap div label:nth-child(3) label {
+  color: white;
+  background-color: darkcyan;
+  border: solid;
+}
+input[type="radio"][value="imp3"]:checked ~ * .buttonsWrap div label:not(:nth-child(3)) label {
+  color: yellow;
+  background-color: yellow;
+  border: solid;
+}
+input[type="radio"][value="imp4"]:checked ~ * .buttonsWrap div label:nth-child(4) label {
+  color: white;
+  background-color: darkcyan;
+  border: solid;
+}
+input[type="radio"][value="imp4"]:checked ~ * .buttonsWrap div label:not(:nth-child(4)) label {
+  color: yellow;
+  background-color: yellow;
+  border: solid;
+}
+
+/*
+#expand-toggle4:checked ~ #expand-btn4 {
+  background-color: #ccc;
+}
+*/
+
+@media screen and (max-width: 730px) {
+  .memText {
+    max-width: 18vh;
+  }
+  .buttonsWrap div {
+    height: 12vh;
+  }
+}
+@media screen and (max-width: 630px) {
+  .memText {
+    max-width: 14vh;
+    font-size: 2vh;
+  }
+  .buttonsWrap div {
+    height: 16vh;
+  }
+  .buttonsWrap {
+    transform: translateX(0.2vh);
+  }
+  .links {
+    transform: translate(0, -0.88vh);
+  }
+}
